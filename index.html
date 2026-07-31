@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Muskan ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  background: linear-gradient(to right, #ff9a9e, #fad0c4);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Card */
+.container {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 420px;
+  height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  animation: fadeIn 1.5s ease;
+}
+
+h1 {
+  text-align: center;
+  color: #ff4b5c;
+}
+
+/* Text */
+#text {
+  white-space: pre-line;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* Button */
+button {
+  display: block;
+  margin: 15px auto;
+  padding: 10px 20px;
+  border: none;
+  background: #ff4b5c;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background: #e63b4a;
+}
+
+/* Heart */
+.heart {
+  text-align: center;
+  font-size: 28px;
+  animation: beat 1s infinite;
+}
+
+/* Animations */
+@keyframes beat {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+@keyframes fadeIn {
+  from {opacity:0; transform: translateY(20px);}
+  to {opacity:1; transform: translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 Music -->
+<audio id="music" loop preload="auto">
+  <source src="./music2.mp3" type="audio/mp3">
+</audio>
+
+<div class="container">
+  <h1>Happy Birthday Mami ji ❤️</h1>
+
+  <div class="heart">❤️</div>
+
+  <button onclick="start()">Open Your Letter 💌</button>
+
+  <p id="text"></p>
+</div>
+
+<script>
+const message = `Aaj ke din main bas itna kehna chahta/chahti hoon
+ki aap mere liye sirf Mami nahi ho…
+aap mere liye ek parent jaisi ho.
+
+Aapne hamesha mujhe utna hi pyaar diya hai,
+utna hi samjha hai,
+jitna shayad ek maa samajhti hai.
+
+Aap sirf bahar se hi nahi,
+andar se bhi itni khoobsurat ho
+ki aapke paas rehne se hi
+sab kuch theek lagne lagta hai.
+
+Aap wo insaan ho
+jo poori family ko jod kar rakhti ho,
+har rishta sambhalti ho,
+aur sabko ek saath baandh kar rakhti ho.
+
+Aur sabse inspiring baat…
+aapne kabhi apne sapno ko chhoda nahi.
+
+40 ki age mein bhi
+aapne apni padhai aur passion continue kiya —
+yeh sirf himmat nahi,
+yeh ek misaal hai.
+
+Aap humein sikhati ho
+ki life mein kabhi late nahi hota,
+aur strong rehna aur kind rehna
+ek saath possible hai.
+
+Main aapko dekh kar seekhta/seekhti hoon
+ki insaan ko kaisa hona chahiye.
+
+Aap sirf meri Mami nahi ho,
+aap meri strength ho,
+mera support ho,
+aur meri inspiration ho.
+
+Main bas dil se yeh dua karta/karti hoon
+ki aapko life mein utni hi khushiyan mile
+jitni aap sabko deti ho.
+
+Aap hamesha muskuraati raho,
+kyunki aapki smile mein ghar jaisa sukoon hai.
+
+Happy Birthday Mami ❤️
+Aap mere liye bohot special ho…
+aur hamesha rahogi 💫 ❤️`;
+
+let i = 0;
+
+function start() {
+  document.getElementById("music").play();
+  typeWriter();
+}
+
+function typeWriter() {
+  if (i < message.length) {
+    document.getElementById("text").innerHTML += message.charAt(i);
+    i++;
+    setTimeout(typeWriter, 28);
+  }
+}
+</script>
+
+</body>
+</html>
